@@ -1,4 +1,4 @@
-FROM scratch AS build
+FROM gradle:7.1.1-jdk16 AS build
 
 WORKDIR /usr/app
 
@@ -6,9 +6,10 @@ COPY ./ ./
 
 RUN ["./gradlew", "build"]
 
+#  #  Only usable on ARM64
 FROM openjdk:16-ea-alpine
 
-COPY --from=build /build/libs/resource-0.0.1-SNAPSHOT.jar ./app.jar
+COPY --from=build /usr/app/build/libs/*.jar ./app.jar
 
 CMD ["java", "-jar", "./app.jar"]
 
