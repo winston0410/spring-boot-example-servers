@@ -7,7 +7,9 @@ COPY ./ ./
 RUN ["./gradlew", "build"]
 
 #  #  Only usable on ARM64
+#  Cannot build correctly on M1 mac whatsoever
 FROM openjdk:16-ea-alpine
+#  FROM gcr.io/distroless/java
 
 COPY --from=build /usr/app/build/libs/*.jar ./app.jar
 
