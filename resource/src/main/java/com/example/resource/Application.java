@@ -15,15 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 
-@RestController
-@EnableAutoConfiguration
+@SpringBootApplication
 public class Application {
-
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
