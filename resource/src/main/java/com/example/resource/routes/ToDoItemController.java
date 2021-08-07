@@ -9,32 +9,40 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.resource.types.Response;
+
+// Enable CORS
+@CrossOrigin
 @RestController
 @RequestMapping("todo-items")
 public class ToDoItemController {
 
 	@GetMapping("")
     @ResponseBody
-	public String get() {
-		return "get";
+	public Response get() {
+		Response res = new Response("hello");
+        return res;
 	}
     
 	@PostMapping("")
     @ResponseBody
-	public String post() {
-		return "post";
+	public Response post() {
+		Response res = new Response("post");
+        return res;
 	}
 
 	@PutMapping("")
     @ResponseBody
-	public String put() {
-		return "put";
+	public Response put() {
+		Response res = new Response("put");
+        return res;
 	}
     
 	@DeleteMapping("")
     @ResponseBody
-	public String delete() {
-		return "delet";
+	public Response delete() {
+		Response res = new Response("delet");
+        return res;
 	}
 
 }
