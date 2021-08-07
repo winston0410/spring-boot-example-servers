@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.resource.types.Response;
 
@@ -31,16 +33,17 @@ public class ToDoItemController {
         return res;
 	}
 
-	@PutMapping("")
+	@PutMapping("/{id}")
     @ResponseBody
-	public Response put() {
+	public Response put(@PathVariable String id) {
+        System.out.println(id);
 		Response res = new Response("put");
         return res;
 	}
     
-	@DeleteMapping("")
+	@DeleteMapping("/{id}")
     @ResponseBody
-	public Response delete() {
+	public Response delete(@PathVariable String id) {
 		Response res = new Response("delet");
         return res;
 	}
