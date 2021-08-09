@@ -17,6 +17,8 @@ dependencies {
     // https://search.maven.org/search?q=g:org.postgresql
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.postgresql:postgresql")
+    // add thymeleaf for testing only
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("com.zaxxer:HikariCP:5.0.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -24,4 +26,8 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+bootRun {
+  addResources = true
 }
