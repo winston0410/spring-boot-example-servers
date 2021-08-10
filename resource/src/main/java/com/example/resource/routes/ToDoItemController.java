@@ -17,7 +17,7 @@ import com.example.resource.types.Response;
 @CrossOrigin
 @RestController
 @RequestMapping("todo-items")
-public class ToDoItemController {
+public class TodoItemController {
 
 	@GetMapping("")
     @ResponseBody
