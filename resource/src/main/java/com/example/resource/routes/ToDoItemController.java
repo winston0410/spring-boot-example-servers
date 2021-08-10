@@ -22,7 +22,7 @@ public class ToDoItemController {
 	@GetMapping("")
     @ResponseBody
 	public Response get() {
-		Response res = new Response("hello");
+		Response res = new Response("bye bye");
         return res;
 	}
     
