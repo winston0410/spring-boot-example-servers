@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Embeddable;
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 import com.example.resource.annotation.EnumNamePattern;
@@ -24,5 +25,6 @@ public class TodoItem {
     public String description;
     
     @EnumNamePattern(regexp = "completed|incomplete|removed")
+    @Column(columnDefinition = "varchar(20)")
     public Status status;
 }
